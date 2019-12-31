@@ -16,6 +16,18 @@ composer require annotations
 composer require doctrine/annotations
 php bin/console make:controller MainController
 
+# dump
+composer require dump
+
+# server least 4.4
+composer require server
+php bin/console server:run
+
+php bin/console server:start
+
 
 # optional for update
  composer update "symfony/*"
+
+# template
+composer require template
