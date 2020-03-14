@@ -67,3 +67,65 @@ php bin/console doctrine:database:create
 ````
 php bin/console make:entity 
 ````
+for update entity
+````
+php bin/console make:entity --regenerate
+````
+Run for migrations
+````
+ php bin/console doctrine:schema:update
+ 
+  php bin/console doctrine:schema:update --dump-sql
+  php bin/console doctrine:schema:update --force
+````
+   
+ php bin/console make:controller ArticleController
+ 
+#CRUD
+Before make forms install
+````
+ composer require validation
+composer require form
+````
+Create a form
+````
+php bin/console make:form
+````
+insert into a packages/twig.yaml
+````yaml
+form_theme: 'bootstrap_4_layout.html.twig'
+````
+Run for display toolbar
+````
+composer require profiler
+composer req web-profiler-bundle
+````
+#Auth
+````
+composer require security
+````
+Make the security user class, its prefer to create a entity called user
+````
+php bin/console make:user
+```` 
+the result it gonna be this
+````
+ created: src/Entity/User.php
+ created: src/Repository/UserRepository.php
+ updated: src/Entity/User.php
+ updated: config/packages/security.yaml
+````
+and then create
+````
+php bin/console make:auth
+````
+
+For migrate users and update into the schema
+````
+ php bin/console doctrine:schema:update --dump-sql
+ php bin/console doctrine:schema:update --force
+````
+Make Controller for Register users
+````
+php bin/console make:controller RegistrationController
+````
